@@ -60,7 +60,7 @@ app.controller('EditCtrl', ['$scope', '$location', 'recipe',
   $scope.recipe = recipe;
 
   $scope.save = function() {
-    $scope.recipe.$save(function(recipe) {
+    $scope.recipe.$change(function(recipe) {
       $location.path('/view/' + recipe.id);
     });
   };

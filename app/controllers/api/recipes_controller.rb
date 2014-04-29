@@ -34,7 +34,7 @@ class Api::RecipesController < ApplicationController
   # PATCH/PUT /api/recipes/1
   # PATCH/PUT /api/recipes/1.json
   def update
-    @recipe.save!
+    @recipe.update_attributes(api_recipe_params)
     render nothing: true
   end
 

@@ -1,23 +1,27 @@
-'use strict';
-
 var services = angular.module('guthub.services', ['ngResource']);
 
-services.factory('Recipe', ['$resource', '$http', function($resource, $http) {
+services.factory('Recipe', ['$resource', '$http', function($resource, $http)
+{
   var defaults = $http.defaults.headers;
   defaults.patch = defaults.patch || {};
   defaults.patch['Content-Type'] = 'application/json';
-  return $resource('/api/recipes/:id', {id: '@id'}, {update: {method: 'PATCH'}});
+
+  return $resource('/api/recipes/:id', {id: '@id'}, {change: {method: 'PUT',  params: {id: '@id'}}});
 }]);
 
-services.factory('MultiRecipeLoader', ['Recipe', '$q',
-    function(Recipe, $q) {
-  return function() {
+services.factory('MultiRecipeLoader', ['Recipe', '$q', function(Recipe, $q)
+{
+  return function()
+  {
     var delay = $q.defer();
-    Recipe.query(function(recipes) {
-      delay.resolve(recipes);
-    }, function() {
-      delay.reject('Unable to fetch recipes');
-    });
+    Recipe.query( function(recipes)
+      {
+        delay.resolve(recipes);
+      }, function()
+          {
+            delay.reject('Unable to fetch recipes');
+          }
+    );
     return delay.promise;
   };
 }]);
