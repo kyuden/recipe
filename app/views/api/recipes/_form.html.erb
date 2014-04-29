@@ -1,0 +1,41 @@
+<%= form_for(@api_recipe) do |f| %>
+  <% if @api_recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@api_recipe.errors.count, "error") %> prohibited this api_recipe from being saved:</h2>
+
+      <ul>
+      <% @api_recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :amountUnits %><br>
+    <%= f.text_field :amountUnits %>
+  </div>
+  <div class="field">
+    <%= f.label :amountUnits %><br>
+    <%= f.text_field :amountUnits %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %><br>
+    <%= f.text_field :instructions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

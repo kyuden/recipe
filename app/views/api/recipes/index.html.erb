@@ -1,0 +1,35 @@
+<h1>Listing api_recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Amountunits</th>
+      <th>Amountunits</th>
+      <th>Instructions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @api_recipes.each do |api_recipe| %>
+      <tr>
+        <td><%= api_recipe.title %></td>
+        <td><%= api_recipe.description %></td>
+        <td><%= api_recipe.amount %></td>
+        <td><%= api_recipe.amountUnits %></td>
+        <td><%= api_recipe.amountUnits %></td>
+        <td><%= api_recipe.instructions %></td>
+        <td><%= link_to 'Show', api_recipe %></td>
+        <td><%= link_to 'Edit', edit_api_recipe_path(api_recipe) %></td>
+        <td><%= link_to 'Destroy', api_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_api_recipe_path %>

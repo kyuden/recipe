@@ -1,0 +1,22 @@
+!!!
+%html{lang: "en", "ng-app" => "guthub"}
+  %head
+    %title GutHub - Create and Share
+    = stylesheet_link_tag    "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      %h1 GutHub
+    %div{butterbar: ""} Loading...
+    .container-fluid
+      .row-fluid
+        .span2
+          / Sidebar
+          #focus
+            %a{href: "/#/new"} New Recipe
+          %div
+            %a{href: "/#/"} Recipe List
+        .span10
+          %div{"ng-view" => ""}

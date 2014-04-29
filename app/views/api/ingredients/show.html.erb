@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @api_ingredient.amount %>
+</p>
+
+<p>
+  <strong>Amountunits:</strong>
+  <%= @api_ingredient.amountUnits %>
+</p>
+
+<p>
+  <strong>Ingredientname:</strong>
+  <%= @api_ingredient.ingredientName %>
+</p>
+
+<%= link_to 'Edit', edit_api_ingredient_path(@api_ingredient) %> |
+<%= link_to 'Back', api_ingredients_path %>
