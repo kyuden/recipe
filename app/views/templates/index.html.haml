@@ -8,15 +8,17 @@
     = csrf_meta_tags
   %body
     %header
-      %h1 GutHub
+      %h1 Angular on Rails
     %div{butterbar: ""} Loading...
     .container-fluid
       .row-fluid
-        .span2
+        .span4
           / Sidebar
           #focus
-            %a{href: "/#/new"} New Recipe
+            %h2
+              %a{href: "/#/new"} New Recipe
           %div
-            %a{href: "/#/"} Recipe List
-        .span10
+            %h2
+              %a{href: "/#/"} Recipe List
+        .span8
           %div{"ng-view" => ""}

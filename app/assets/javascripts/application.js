@@ -18,4 +18,5 @@
 //= require_directory ./directives
 //= require_directory ./services
 //= require_directory ./controllers
+//= require bootstrap
 //= require_tree .
